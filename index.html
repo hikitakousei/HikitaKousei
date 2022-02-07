@@ -36,7 +36,7 @@ text-align:center;}
 
 
 
-
+<title>会員登録完了</title>
 
 
 </title>
@@ -128,5 +128,15 @@ text-align:center;}
       $("#delete").click(() => {
         $("#notification").addClass("is-hidden")
       });
+      
+      history.pushState(null, null, null);
+        $(window).on("popstate", function(e){
+          if (!e.originalEvent.state){
+            play_se();
+            history.pushState(null, null, null);
+            return;
+          }
+        });
+
     </script>
   </body>
